@@ -4,6 +4,11 @@
     <div class="card-body">
       <h5 class="card-title">{{post.titulo}}</h5>
       <p class="card-text">
+        
+        <span class="badge bg-secodary">
+            {{tags}}
+          </span>
+          
         {{post.sumario}}
       </p>
       <a href="{% url 'post-handler' post.slug  %}" class="btn cards__button">Go somewhere</a>

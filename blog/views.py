@@ -1,9 +1,8 @@
 
 
 
-from ast import Del, Delete
-from pyexpat import model
-from django.http import HttpResponse, HttpResponseRedirect
+
+from django.http import  HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from .models import Post
@@ -17,6 +16,8 @@ class inicio_handler(ListView):
     model = Post
     template_name = "blog/index.html"    
     context_object_name = "lista"
+
+   
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -42,7 +43,9 @@ class postDestalle(View):
         context = {
             'detail': post,
             'form': CommentForm(),
-            'comentarios': post.post_comments.all()
+            'comentarios': post.post_comments.all(),
+            'tags': post.tags.all()
+            
             
         }
         

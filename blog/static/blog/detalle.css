@@ -1,13 +1,25 @@
 .postBanner{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding: 5rem 0;
     background-color: blueviolet;
 }
 
+.titleWrap{
+    position: relative;
+}
+
+.badgePost{
+    position: absolute;
+    top: 1rem;
+    left: 0;
+}
+
 .postBannerReact{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding: 5rem 0;
@@ -64,6 +76,8 @@
 
 
 }
+
+
 
 .postComments__control{
     max-width: 600px;

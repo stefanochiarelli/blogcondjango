@@ -15,8 +15,15 @@
         <img src="{{detail.nombre_imagen.url}}" alt="imagen post banner">
     </div>
     
-    <h2>{{detail.titulo}}</h2>
-    
+    <div class="titleWrap">
+        <h2>{{detail.titulo}}</h2>
+
+        {% for tag in tags %}
+        <span style="display: block; width:10%;" class="badge badgePost {% if tag.caption == 'Nuevo' %} bg-warning{% else %} bg-dark {% endif %} my-5">
+            {{tag.caption}}
+        </span>
+        {% endfor %}
+    </div>
 </div>
 
 <div class="container postContent ">
@@ -42,17 +49,26 @@
         {% endfor %}
     </div>
 
-    <h4 class="my-4 text-center">¡Deja tu Cometario!</h4>        
-        <section class="postComments">
+    <h4 class="my-4 text-center">¡Deja tu Cometario!</h4>  
+    {% if user.is_authenticated %}
+    <section class="postComments">
             
-            <form action="{% url 'post-handler' detail.slug %}" method="post">
-                <div class="postComments__control">
-                    {% csrf_token %}
-                    {{form}}
-                    <button type="submit">Enviar</button>
-                </div>
-            </form>            
-        </section>
+        <form action="{% url 'post-handler' detail.slug %}" method="post">
+            <div class="postComments__control">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit">Enviar</button>
+            </div>
+        </form>            
+    </section>
+    {% else %}
+    
+       <h4 class="text-center">Debes estar logueado para dejar un comentario, haz click <a href="{% url 'login' %}">aqui</a> para loguearte</h4>         
+                  
+    
+    {% endif %}
+          
+        
     
 </div>
 
