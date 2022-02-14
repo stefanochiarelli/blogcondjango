@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}" />
+    <link rel="stylesheet" href="{% static 'blog/detalle.css' %}" />
+{% endblock css_files %} 
+
+{% block main_content %}
+
+
+<div class="{% if detail.slug == 'jugando-con-react' %}postBannerReact {% else %}postBanner{% endif %} ">
+    
+    <div class="postBanner__container">
+        <img src="{{detail.nombre_imagen.url}}" alt="imagen post banner">
+    </div>
+    
+    <h2>{{detail.titulo}}</h2>
+    
+</div>
+
+<div class="container postContent ">
+    {% if user.is_superuser %}
+    <div class="crudButtons">
+        <button class="btn btn-primary my-3"><a style="text-decoration: none !important; color: white;" href="{% url 'edit-post' detail.slug %}">Editar Post</a></button>
+        <button class="btn btn-danger"><a style="text-decoration: none !important; color: white;" href="{% url 'post-handler-delete' detail.slug %}">Eliminar Post</a></button>
+    </div>
+        
+    {% endif %}
+    
+    {{detail.contenido | safe}}
+
+    <hr>
+    <div class="comments">
+        <h4>Comentarios:</h4>
+        {% for comentario in  comentarios %}
+            <div class="comment">
+                <p><span style="font-weight: bold;">Usuario:</span> {{comentario.usuario}}</p>
+                <p><span style="font-weight: bold;">Mensaje:</span> {{comentario.usuario_mensaje}}</p>
+                <p><span style="font-weight: bold;">Fecha:</span> {{comentario.usuario_fecha_comment}}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h4 class="my-4 text-center">¡Deja tu Cometario!</h4>        
+        <section class="postComments">
+            
+            <form action="{% url 'post-handler' detail.slug %}" method="post">
+                <div class="postComments__control">
+                    {% csrf_token %}
+                    {{form}}
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>            
+        </section>
+    
+</div>
+
+<hr>
+
+
+{% endblock main_content %}

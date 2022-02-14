@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}" />
+    <link rel="stylesheet" href="{% static 'blog/detalle.css' %}" />
+{% endblock css_files %} 
+
+{% block main_content %}
+
+
+
+
+<div class="container postContentAbout ">
+
+    <div class="d-flex align-items-center">
+        <h3 style="width: 100%">Sobre Mi</h3>
+        <img class="heroBanner__img" src="{% static 'blog/img/yo.jpg' %}" alt="imagen del dueño" >
+    </div>
+    
+    
+
+    <p>Hola soy Stefano, Junior Front-End Developer. React Js, reactstrap, Javascript (ES6), jQuery, CSS, Sass, Bootstrap, HTML5, Git.</p>
+    
+    <p>Ahora se puede decir que puedo sumar Django también en esa lista. Programo hace más de dos años.</p>
+
+    <p>
+       Descubrí que me gustaba el desarrollo web porque en mis campañas de marketing siempre tenia que contratar freelancers para 
+       que me programarar mis páginas. Además tenia que usar website builders que son muy engorrosos e incomodos de usar, y generalmente
+       no me gustaba el resultado final.
+    </p>
+
+    <h5 class="text-center">¡Gracias por leer mi blog!</h5>
+    
+</div>
+
+
+
+
+{% endblock main_content %}

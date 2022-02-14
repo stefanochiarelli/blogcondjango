@@ -1,0 +1,35 @@
+/* .form-group {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+} */
+
+.form-gourp__container{
+    display: block;
+    margin: 0 auto;
+    max-width: 1024px;
+    
+    /* align-items: center; */
+    text-align: start;
+}
+
+.form-gourp__container input{
+    display: block;
+    border-radius: .4rem;
+    margin: .6rem 0;
+    padding: .5rem;
+    width: 100%;
+}
+
+.form-gourp__container button{
+    display: block;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+
+}

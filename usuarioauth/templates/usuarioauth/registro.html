@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}" />
+    <link rel="stylesheet" href="{% static 'formsReg.css' %}" />
+{% endblock css_files %} 
+
+
+{% block main_content %}
+    <h2 class="text-center my-4">Porfavor registrese:</h2>
+
+    <form method="POST"  class="form-group container">
+        {% csrf_token %}
+        <div class="form-gourp__container">
+            {{form}}
+
+            <button type="submit "> Registrarse </button>
+        </div>
+        
+        
+    </form>
+{% endblock main_content %}

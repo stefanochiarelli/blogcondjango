@@ -1,0 +1,120 @@
+.postBanner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+    background-color: blueviolet;
+}
+
+.postBannerReact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+    background-color: blueviolet;
+}
+
+.postBanner h2{
+    color: white;
+    font-size: 3rem;
+}
+
+.postBannerReact h2{
+    color: white;
+    font-size: 4rem;
+}
+
+.postBanner__container {
+    max-width: 40%;
+}
+
+.postBanner__container img{
+    max-width: 30%;
+    transform: rotate(-10deg);
+    border: rgb(185, 110, 255) dotted 4px;
+    border-radius: 1rem;
+}
+
+.postContent{
+    background-color: rgb(250, 250, 250);
+    padding: 5rem;
+}
+
+.postContentAbout{
+    background-color: rgb(250, 250, 250);
+    padding: 5rem;
+    padding-bottom: 15rem;
+    overflow-y: hidden;
+}
+
+
+.postContentAbout h5{
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 5rem 0 ;
+}
+
+.postComments{
+    background-color: rgb(158, 74, 238);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: dotted rgba(0, 0, 0, 0.432) 2px;
+    max-width: 800px;
+    margin: 0 auto;
+
+
+}
+
+.postComments__control{
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+
+.postComments__control input {
+    display: block;
+    border-radius: .4rem;
+    margin: .6rem 0;
+    padding: .5rem;
+    width: 100%;
+}
+
+
+.postComments__control textarea {
+    display: block;
+    border-radius: .4rem;
+    margin: .6rem 0;
+    padding: .5rem;
+    width: 100%;
+}
+
+.postComments__control label {
+    color: white;
+    display: block;
+    width: 80%;
+}
+
+.postComments__control button{
+    display: block;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: solid rgb(75, 74, 74);
+    background-color: rgb(197, 148, 243);
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.comment {
+    padding: 1rem;
+    margin: 2rem 0;
+    background-color: aliceblue;
+    border: 1px solid rgb(65, 64, 64);
+    border-radius: .6rem;
+}
+
+.crudButtons{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}

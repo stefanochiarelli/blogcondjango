@@ -1,0 +1,54 @@
+
+
+h1{
+    color: #ffffff;
+}
+
+.cards__button {
+    display: block;
+    width: 60%;
+    background-color: #9900ff;
+    color: white;
+    margin: 0 auto;
+}
+
+.cards__button:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #bf74f1;
+}
+
+/* HERO BANNER */
+
+.navbar__login{
+    position: absolute;
+    left: 94%;
+}
+
+.navbar__register{
+    position: absolute;
+    left: 86%;
+
+}
+
+/* Seccuion Banner */
+
+.heroBanner{
+    background-color: #9900ff;
+    padding-top:  2.5rem;
+    padding-bottom: 5rem;
+}
+
+.heroBanner__descr{
+    padding: 0 5rem;
+    color: #eee;
+}
+
+.heroBanner__img{
+    max-width: 25%;
+    clip-path: circle();
+}
+
+.heroBannerAllPost {
+    background-color: #9900ff;
+    padding: 6rem 0;
+}

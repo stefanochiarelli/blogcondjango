@@ -1,0 +1,11 @@
+{% load static %}
+<div class="card my-2" style="width: 18rem">
+    <img src="{{post.nombre_imagen.url}}" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{post.titulo}}</h5>
+      <p class="card-text">
+        {{post.sumario}}
+      </p>
+      <a href="{% url 'post-handler' post.slug  %}" class="btn cards__button">Go somewhere</a>
+    </div>
+</div>

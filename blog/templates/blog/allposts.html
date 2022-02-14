@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}"/>
+{% endblock css_files %}
+
+{% block title %}
+    <title>Todos mis posteos</title>
+{% endblock title %}
+
+{% block main_content %}
+
+<div class="heroBannerAllPost ">
+    <h2 class="text-center text-white my-4">Todos mis blogs</h2>
+</div>
+    
+
+    <div class="container">
+        <div class="row">
+            {% for post in lista %}
+                <div class="col d-flex flex-column align-items-center">
+                    {% include 'blog/includes/post.html' %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock main_content %}
